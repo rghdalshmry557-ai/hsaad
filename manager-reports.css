@@ -1,0 +1,232 @@
+﻿/**
+ * Page-specific styles for manager-reports.php.
+ * Extracted from inline CSS to keep templates clean and maintainable.
+ */
+
+.manager-reports-redesign {
+    gap: 16px;
+}
+
+.reports-control-panel {
+    border: 2px solid #d9cfbe;
+    background: linear-gradient(135deg, #fffdf8 0%, #f6f0e4 100%);
+}
+
+.report-control-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5dccb;
+}
+
+.report-control-head .section-title {
+    margin: 0;
+}
+
+.control-note {
+    margin: 4px 0 0;
+    color: #45644a;
+    font-size: 0.9rem;
+}
+
+.control-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-date {
+    font-size: 0.82rem;
+    color: #45644a;
+    background: #fff;
+    border: 1px solid #ddd0b7;
+    border-radius: 999px;
+    padding: 6px 10px;
+}
+
+.reports-master-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.reports-master-filter .filter-btn {
+    border-radius: 999px;
+    border-width: 1px;
+    padding: 8px 14px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    background: #fff;
+}
+
+.reports-master-filter .filter-btn.active {
+    background: #18442a;
+    color: #fff;
+    border-color: #18442a;
+}
+
+.transactions-subtitle {
+    margin: 4px 0 0;
+    color: #45644a;
+    font-size: 0.86rem;
+}
+
+.transactions-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin: 14px 0 16px;
+}
+
+.transactions-kpi {
+    background: #fff;
+    border: 1px solid #e5dccb;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.transactions-kpi .kpi-label {
+    display: block;
+    font-size: 0.78rem;
+    color: #45644a;
+    margin-bottom: 5px;
+}
+
+.transactions-kpi .kpi-value {
+    font-size: 1rem;
+    color: #18442a;
+}
+
+.transactions-kpi .kpi-value.danger {
+    color: #9b2d20;
+}
+
+.executive-report-panel {
+    border: 2px solid #e4dbc4;
+    background: linear-gradient(180deg, #ffffff 0%, #fbf8f3 100%);
+}
+
+.executive-sub-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 0 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px dashed #d9cfbe;
+}
+
+.executive-sub-filter .filter-btn {
+    border-radius: 999px;
+    border-width: 1px;
+    padding: 7px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #fff;
+}
+
+.executive-sub-filter .filter-btn.active {
+    background: #45644a;
+    color: #fff;
+    border-color: #45644a;
+}
+
+.executive-report-panel .section-title {
+    margin-bottom: 18px;
+    font-size: 1.25rem;
+}
+
+.executive-grid-two {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.executive-card {
+    border: 1px solid #d7cebd;
+    border-radius: 10px;
+    padding: 12px;
+    background: #fff;
+}
+
+.executive-card h4 {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+}
+
+.executive-card.full-width {
+    margin-top: 14px;
+}
+
+.executive-table-wrap {
+    border: 1px solid #d7cebd;
+    border-radius: 8px;
+}
+
+.executive-table {
+    margin: 0;
+}
+
+.executive-table th,
+.executive-table td {
+    border-bottom: 1px solid #ece8de;
+    padding: 10px 12px;
+    font-size: 0.88rem;
+}
+
+.executive-table th {
+    background: #f1ecdf;
+    color: #18442a;
+    font-weight: 700;
+}
+
+.executive-table.compact th,
+.executive-table.compact td {
+    padding: 9px 10px;
+}
+
+.executive-total-row td {
+    background: #f9f5ea;
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .report-control-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .control-tools {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .transactions-kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .executive-grid-two {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .transactions-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    .reports-page > section:not(.executive-report-panel):not(.report-actions) {
+        display: none !important;
+    }
+
+    .executive-report-panel {
+        box-shadow: none;
+        border-color: #cfc6b4;
+    }
+}
+
